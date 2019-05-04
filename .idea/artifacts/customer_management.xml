@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="ear" build-on-make="true" name="customer-management">
+    <output-path>$PROJECT_DIR$/out/artifacts/customer_management</output-path>
+    <root id="archive" name="customer-management.ear">
+      <element id="archive" name="customer_management.jar">
+        <element id="module-output" name="customer-management" />
+      </element>
+    </root>
+  </artifact>
+</component>

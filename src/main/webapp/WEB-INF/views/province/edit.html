@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Province</title>
+</head>
+<body>
+<h1>Update Province</h1>
+<a th:href="@{/provinces}">Back to the list</a>
+<form th:action="@{/province/edit}" method="post" th:object="${province}">
+    <fieldset>
+        <legend>ProvinceInformation</legend>
+        <table>
+            <tr>
+                <td><input type="hidden" th:field="*{id}"></td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" th:field="*{name}"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Edit"></td>
+            </tr>
+        </table>
+    </fieldset>
+</form>
+</body>
+</html>
