@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Customer</title>
+</head>
+<body>
+<h1>Update Customer</h1>
+<a th:href="@{/list}">Back to the list</a>
+<form th:action="@{/edit}" method="post" th:object="${customer}">
+    <fieldset>
+        <legend>Customer Information</legend>
+        <table>
+            <tr><input type="hidden" th:field="*{id}"> </tr>
+            <tr>
+                <td>FirstName</td>
+                <td><input type="text" th:field="*{firstName}"></td>
+            </tr>
+            <tr>
+                <td>LastName</td>
+                <td><input type="text" th:field="*{lastName}"> </td>
+            </tr>
+            <tr>
+                <td>Province:</td>
+                <td>
+                    <select th:field="*{province}">
+                        <option th:each="p:${provinces}"
+                        th:value="${p.id}"
+                        th:text="${p.name}"
+                        th:selected="(${p.id}== *{province.id})">
+
+                        </option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Update Customer"></td>
+            </tr>
+        </table>
+    </fieldset>
+</form>
+</body>
+</html>
